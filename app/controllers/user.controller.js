@@ -1,16 +1,30 @@
 const db = require("../../models/index");
-
-exports.createUser = (req, res) => {
+const userService=require("../services/user.service")
+exports.createUser =(req, res) => {
   const data = req.body;
-  db.user
-    .create(data)
-    .then((data) => res.status(200).send({ status: true, data: data }))
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving tutorials.",
-      });
-    });
+  // db.user
+  //   .create(data)
+  //   .then((data) => res.status(200).send({ status: true, data: data }))
+  //   .catch((err) => {
+  //     res.status(500).send({
+  //       message:
+  //         err.message || "Some error occurred while retrieving tutorials.",
+  //     });
+  //   });
+  // const response = await userService.createuser(data);
+  // return res
+  //   .status(response.status)
+  //   .json({ message: response.message, result: response.result });
+
+     userService.createuser(data)
+     .then((response) => res.status(response.status).json({ message: response.message, result: response.result }))
+     .catch((err) => {
+       res.status(500).send({
+         message:
+           err.message || "Some error occurred while retrieving tutorials.",
+       });
+     }); 
+
 };
 
 exports.findUsers = (req, res) => {
