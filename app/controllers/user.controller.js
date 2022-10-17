@@ -27,18 +27,18 @@ exports.createUser =(req, res) => {
 
 };
 
-exports.findUsers = (req, res) => {
-  const userId = req.params.id;
-  db.user
-    .findAll()
-    .then((data) => res.send(data))
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving tutorials.",
-      });
-    });
-};
+// exports.findUsers = (req, res) => {
+//   const userId = req.params.id;
+//   db.user
+//     .findAll()
+//     .then((data) => res.send(data))
+//     .catch((err) => {
+//       res.status(500).send({
+//         message:
+//           err.message || "Some error occurred while retrieving tutorials.",
+//       });
+//     });
+// };
 
 exports.getUserById = (req, res) => {
   const userId = req.params.id;
