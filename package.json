@@ -17,10 +17,18 @@
     "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
-    "sequelize": "^6.25.2"
+    "sequelize": "^6.25.3"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.5.1"
+    "sequelize-cli": "^6.5.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satendrakushwaha8092/Projects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/satendrakushwaha8092/Projects/issues"
+  },
+  "homepage": "https://github.com/satendrakushwaha8092/Projects#readme",
   "description": ""
 }
