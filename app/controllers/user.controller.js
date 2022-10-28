@@ -1,13 +1,23 @@
-const db= require('../../models/users')
-exports.create=async (req, res) => {
+const db= require('../../models/index')
+const service=require('../services/user.service')
+exports.register=async (req, res) => {
     try{
     const data=req.body
-    console.log(data)  //
-    const savedData=await db.users.create(data)
-    res.status(201).send({savedData})
+    const response=await service.create(data)
+    res.status(response.status).send({message:response.message,result:response.result})
     }catch(err){
         res.status(500).send({err:err.message})
     }
+}
+
+exports.login=async (req, res) =>{
+    try{
+        const data=req.body
+        const response=await service.login(data)
+        res.status(response.status).send({message:response.message,result:response.result})
+        }catch(err){
+            res.status(500).send({err:err.message})
+        }
 }
 
 exports.get=async (req, res) => {
