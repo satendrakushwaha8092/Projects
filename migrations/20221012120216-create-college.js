@@ -2,39 +2,24 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('books', {
+    await queryInterface.createTable('Colleges', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
+      name: {
         type: Sequelize.STRING
       },
-      excerpt: {
+      fullName: {
         type: Sequelize.STRING
       },
-      userId: {
+      phone: {
         type: Sequelize.STRING
       },
-      ISBN: {
+      email: {
         type: Sequelize.STRING
-      },
-      category: {
-        type: Sequelize.STRING
-      },
-      subcategory: {
-        type: Sequelize.STRING
-      },
-      reviews: {
-        type: Sequelize.STRING
-      },
-      deletedAt: {
-        type: Sequelize.DATE
-      },
-      isDeleted: {
-        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -47,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('books');
+    await queryInterface.dropTable('Colleges');
   }
 };

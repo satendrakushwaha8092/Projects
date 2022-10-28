@@ -1,12 +1,10 @@
 const { body, validationResult } = require("express-validator");
-const createUserRules = () => {
+const createCollegeRules = () => {
   return [
-    body("title").notEmpty(),
     body("name").notEmpty(),
-    body("phone").notEmpty(),
+    body("fullName").notEmpty(),
     body("email").notEmpty().isEmail(),
-    body("password").notEmpty(),
-    body("address").notEmpty(),
+    body("phone").notEmpty(),
   ];
 };
 
@@ -24,6 +22,6 @@ const validate = (req, res, next) => {
 };
 
 module.exports = {
-  createUserRules,
+  createCollegeRules,
   validate,
 };
