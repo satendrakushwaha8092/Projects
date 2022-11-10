@@ -13,19 +13,3 @@ exports.create = async (req, res) => {
   }
 };
 
-exports.get = async (req, res) => {
-  const data = await db.urls.findAll();
-  res.status(200).send({ status: false, message: data });
-};
-
-exports.getUrl = async (req, res) => {
-  try {
-    const url = await db.urls.findOne({
-      where: { urlCode: req.params.urlCode },
-    });
-    if(!url) return res.status(404).send({ status: false, message:"not found" });
-    res.status(301).redirect(url.longUrl);
-  } catch (err) {
-    res.status(500).send({ status: false, message: err.message });
-  }
-};
