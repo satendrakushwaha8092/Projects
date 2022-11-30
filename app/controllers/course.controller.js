@@ -2,8 +2,25 @@ const db = require("../../models/index");
 const service = require(".././services/course.services");
 
 exports.create = async (req, res) => {
-  console.log(req.employee);
-  const response = await service.create(req.body, req.employee.role);
+  const {
+    title,
+    description,
+    video_Url,
+    topics,
+    duration,
+    category,
+    permission,
+  } = req.body;
+
+  const response = await service.create({
+    title,
+    description,
+    video_Url,
+    topics,
+    duration,
+    category,
+    permission,
+  }, req.employee.role);
   res
     .status(response.status)
     .send({ message: response.message, result: response.result });
