@@ -12,15 +12,18 @@ exports.create = async (req, res) => {
     permission,
   } = req.body;
 
-  const response = await service.create({
-    title,
-    description,
-    video_Url,
-    topics,
-    duration,
-    category,
-    permission,
-  }, req.employee.role);
+  const response = await service.create(
+    {
+      title,
+      description,
+      video_Url,
+      topics,
+      duration,
+      category,
+      permission,
+    },
+    req.employee.role
+  );
   res
     .status(response.status)
     .send({ message: response.message, result: response.result });
@@ -34,9 +37,30 @@ exports.get = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
+  const {
+    title,
+    description,
+    video_Url,
+    topics,
+    duration,
+    category,
+    permission,
+  } = req.body;
   const course_id = req.params.id;
   const role = req.employee.role;
-  const response = await service.update(req.body, course_id, role);
+  const response = await service.update(
+    {
+      title,
+      description,
+      video_Url,
+      topics,
+      duration,
+      category,
+      permission,
+    },
+    course_id,
+    role
+  );
   res
     .status(response.status)
     .send({ message: response.message, result: response.result });
