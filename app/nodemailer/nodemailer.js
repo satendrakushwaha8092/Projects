@@ -8,9 +8,6 @@ var transporter = nodemailer.createTransport({
   },
 });
 exports.nodemailer = async (otp, email) => {
-  // console.log(email);
-  // console.log("otp:",otp);
-  //const res = product.dataValues;
   var mailOptions = {
     from: "satykush8092@gmail.com",
     to: `${email}`,
