@@ -7,7 +7,6 @@ var transporter = nodemailer.createTransport({
     pass: "jbhlpttkubgzmccm",
   },
 });
-const to = "satendra@nimapinfotech.com";
 exports.nodemailer = async (otp, email) => {
   // console.log(email);
   // console.log("otp:",otp);
