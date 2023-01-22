@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "root123",
+    "database": "node_seqelize",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "root123",
+    "database":"node_sequelize",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "root123",
+    "database": "my_awesome_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
