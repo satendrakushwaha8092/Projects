@@ -1,0 +1,1 @@
+/*Problem-29 Given an array A of n elements. Find three indices, i,j & k such that A[i]2 + A[j]2= A[k]2? */
